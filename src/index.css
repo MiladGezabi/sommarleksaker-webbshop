@@ -41,7 +41,27 @@ nav {
 
 /*-- Här slutar style kod för Header component --*/
 
+.homepage {
+  background: url("https://images.pexels.com/photos/8887539/pexels-photo-8887539.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-size: 1rem;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+.homepage h2 {
+  color: #FFBD00;
+  font-family: 'Joti One', cursive;
+  font-size: 5rem;
+  margin: 5rem;
+}
 
 /* -- Här börjar koden för Footer component */
 
