@@ -17,19 +17,54 @@ body {
 }
 
 
-/* Här börjar style kod för Header componenten */
+/*-- Här börjar style kod för Header componenten --*/
 
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
+  background-color: #FFBD00;
 }
 
 .header h1 {
   font-size: 2rem;
   font-family: 'Joti One', cursive;
+  padding: 1rem;
 }
 
-.header h1 Link {
-  text-decoration: none;
+nav {
+  font-size: 1.5rem;
+  font-family: 'Glory', sans-serif;
+  padding: 1rem;
+  padding-top: 2rem;
 }
+
+/*-- Här slutar style kod för Header component --*/
+
+
+
+/* -- Här börjar koden för Footer component */
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #FFBD00;
+  font-size: 1rem;
+  font-family: 'Glory', sans-serif;
+  padding: 2rem 1rem;
+  /* position: absolute;
+  bottom: 0; */
+}
+
+.socialmedia-box div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.socialmedia-box div i {
+ margin: 1rem 0;
+ font-size: 2rem;
+}
+
+/* -- Här slutar style kod för Footer component */

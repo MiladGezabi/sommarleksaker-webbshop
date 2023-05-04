@@ -1,4 +1,24 @@
 import { Link } from "react-router-dom"
+import styled from "styled-components"
+
+const LogoLink = styled(Link)`
+ text-decoration: none;
+ color: black;
+`
+
+const NavLinks = styled(Link)`
+ text-decoration: none;
+ color: black;
+ Margin: 0rem 1rem;
+`
+
+const ProductsLink = styled(Link)`
+  text-decoration: none;
+  color: white;
+  background-color: #FF5400;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+`
 
 
 const Header = () => {
@@ -7,23 +27,23 @@ const Header = () => {
     <section className="header">
 
       <h1>
-        <Link to="/" >
+        <LogoLink to="/" >
         PlayfulPanda
-        </Link>
+        </LogoLink>
       </h1>
 
       <nav>
-        <Link to="/products" >
+        <ProductsLink to="/products" >
         Produkter
-        </Link>
+        </ProductsLink>
   
-       <Link to="/admin" >
+       <NavLinks to="/admin" >
        Logga in
-       </Link>
+       </NavLinks>
 
-       <Link to="/cart" >
+       <NavLinks to="/cart" >
           <i className="fa fa-shopping-cart"></i>
-       </Link>
+       </NavLinks>
       </nav>
 
     </section>
