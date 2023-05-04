@@ -1,34 +1,30 @@
 import { Link } from "react-router-dom"
-import HomePage from "./Pages/Homepage"
-import ProductsPage from './Pages/ProductsPage'
-import AdminUsers from './Pages/AdminUsers'
-import AdminPage from './Pages/AdminPage'
-import CartPage from './Pages/CartPage'
+
 
 const Header = () => {
 
   return (
-    <section>
+    <section className="header">
 
       <h1>
-        <Link to={<HomePage />}>
-        PlayfullPanda
+        <Link to="/" >
+        PlayfulPanda
         </Link>
       </h1>
 
-      <ul>
-        <Link to={<ProductsPage />}>
+      <nav>
+        <Link to="/products" >
         Produkter
         </Link>
   
-       <Link to={<AdminPage />}>
+       <Link to="/admin" >
        Logga in
        </Link>
 
-       <Link to={<CartPage />}>
+       <Link to="/cart" >
           <i className="fa fa-shopping-cart"></i>
        </Link>
-      </ul>
+      </nav>
 
     </section>
   )

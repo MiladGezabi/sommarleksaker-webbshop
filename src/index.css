@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Glory:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Joti+One&family=Montserrat:wght@400;700&family=Nunito:wght@200;600;700&display=swap');
+/*
+ font-family: 'Glory', sans-serif;
+font-family: 'Joti One', cursive;
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+
+/* Här börjar style kod för Header componenten */
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-family: 'Joti One', cursive;
+}
+
+.header h1 Link {
+  text-decoration: none;
+}
