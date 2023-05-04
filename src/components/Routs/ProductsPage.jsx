@@ -6,7 +6,7 @@ const ProductsPage = () => {
         <>
         <section className="search-and-filter">
             
-            <form action="">
+            <form className="search-form" placeholder="exempel: vatten pistol" action="">
                 <input type="text" />
                 <button className="search-button">
                     Sök
@@ -14,7 +14,9 @@ const ProductsPage = () => {
             </form>
 
             <div className="sorting-box">
-
+                <button>
+                    Sortera <i className="fa fa-sort"></i>
+                </button>
             </div>
         </section>
 
