@@ -43,6 +43,16 @@ nav {
   padding-top: 2rem;
 }
 
+.logout-btn {
+  font-family: 'Glory', sans-serif;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  color: black;
+  Margin: 0rem 1rem;
+  cursor: pointer;
+}
+
 /*-- Här slutar style kod för Header component --*/
 
 /* Här börjar koden för HomePage */
@@ -177,6 +187,15 @@ nav {
 
 /* Här börjar kod för admin lägg till produkt */
 
+
+
+.admin-page h2 {
+  font-family: 'Glory', sans-serif;
+  font-size: 2rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
 .admin-main {
   background-color: #FFBD00;
   display: flex;
@@ -187,12 +206,6 @@ nav {
   margin: 4rem 6rem;
 }
 
-.admin-main h2 {
-  font-family: 'Glory', sans-serif;
-  font-size: 2rem;
-  margin: 1rem 0;
-}
-
 .heading-box {
   display: flex;
   justify-content: center;
@@ -200,7 +213,7 @@ nav {
   font-family: 'Glory', sans-serif;
   font-size: 1.5rem;
   margin-left: 1rem;
-  margin-top: 1rem;
+  margin-top: 5rem;
 }
 
 .heading-box * {
@@ -222,6 +235,16 @@ nav {
   flex-direction: column;
   align-items: center;
 }
+
+.form-box form textarea {
+  font-size: 1.5rem;
+  font-family: 'Glory', sans-serif;
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+  margin: 1rem 0;
+  min-width: 22rem;
+}
+
 
 .form-box form input {
   font-size: 1.5rem;
@@ -245,6 +268,68 @@ nav {
 }
 
 /* Här slutar kod för admin lägg till produkt */
+
+/* Här börjar kod för lägg till admin sidan */
+
+.admin-users-container {
+  background-color: #FFBD00;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  min-height: 80vh;
+  border: 2px solid black;
+  margin: 3rem;
+}
+
+.admin-users-container h2 {
+  font-family: 'Glory', sans-serif;
+  font-size: 2rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.admin-users-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admin-users-container form input {
+  font-size: 1.5rem;
+  font-family: 'Glory', sans-serif;
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+  margin: 1rem 0;
+  min-width: 22rem;
+}
+
+.admin-users-container form button {
+  font-size: 1.5rem;
+  font-family: 'Glory', sans-serif;
+  font-weight: 600;
+  padding: 0.3rem 1rem;
+  border: none;
+  border-radius: 0.2rem;
+  background-color: #FF5400;
+  color: white;
+  cursor: pointer;
+}
+
+.admin-list-box {
+  background-color: white;
+  margin: 3rem;
+  border-radius: 0.2rem;
+  min-height: 20rem;
+}
+
+.admin-list-box h3 {
+  font-family: 'Glory', sans-serif;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+/* Här slutar kod för lägg till admin sidan */
 
 /* -- Här börjar koden för Footer component */
 

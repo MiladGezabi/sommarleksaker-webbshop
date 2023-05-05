@@ -1,7 +1,7 @@
 import { useRecoilState } from "recoil"
 import { loginState } from "../Atoms"
 import styled from "styled-components"
-import { Link } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
 import { LogInForm } from "../Adminlogin"
 
 
@@ -24,49 +24,32 @@ const AdminProductsPageBtn = styled(Link)`
 const AdminPage = () => {
     const [IsloggedIn, setIsLoggedIn] = useRecoilState(loginState)
 
+    
+
     return (
         <>
-        {/* {IsloggedIn === false &&
-            <LogInForm />
-         : } */}
-         <section className="admin-main">
+        {IsloggedIn === false && (
+        <LogInForm />
+        )} 
 
-                <h2>
-                    Välkommen Admin
-                </h2>
-
-            <div className="heading-box">
-
-                <AdminUsersPageBtn to="/users">
-                    Lägg till fler Admins
+        {IsloggedIn === true && (
+        <section className="admin-page">
+            <h2>Välkommen Admin</h2>
+        <   div className="heading-box">
+                <AdminUsersPageBtn to="/admin/users">
+                Lägg till fler Admins
                 </AdminUsersPageBtn>
-                
-                <AdminProductsPageBtn>
-                    Produkter
+                <AdminProductsPageBtn to="/admin/products">
+                Produkter
                 </AdminProductsPageBtn>
-                
             </div>
+        </section>
+        )}
 
-            <div className="form-box">
-                
-                <h3>
-                    Lägg till en ny vara
-                </h3>
 
-                <form action="">
-                    <input placeholder="Produktnamn" type="text" />
-                    <input placeholder="Pris" type="text" />
-                    <input placeholder="Bild URL" type="text" />
-                    <input className="big-input" placeholder="Produktbeskrivning" type="text" />
-
-                    <button className="add-product-btn">
-                        Lägg till
-                    </button>
-                </form>
-
-            </div>
-
-         </section>
+         
+         <Outlet />
+         
         </>
     )
 }

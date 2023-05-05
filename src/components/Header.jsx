@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom"
 import styled from "styled-components"
+import { useRecoilState } from "recoil"
+import { loginState } from "./Atoms"
 
 const LogoLink = styled(Link)`
  text-decoration: none;
@@ -22,8 +24,14 @@ const ProductsLink = styled(Link)`
 
 
 const Header = () => {
+  const [IsloggedIn, setIsLoggedIn] = useRecoilState(loginState)
+
+  const handleLogout = () => {
+    setIsLoggedIn(false)
+  }
 
   return (
+    <>
     <section className="header">
 
       <h1>
@@ -33,6 +41,8 @@ const Header = () => {
       </h1>
 
       <nav>
+        {IsloggedIn === false ? (
+          <>
         <ProductsLink to="/products" >
         Produkter
         </ProductsLink>
@@ -40,6 +50,20 @@ const Header = () => {
        <NavLinks to="/admin" >
        Logga in
        </NavLinks>
+          </>
+        ):
+        (
+          <>
+        <NavLinks to="/admin" >
+        Admin
+        </NavLinks>
+
+        <button className="logout-btn" onClick={() => handleLogout()}>
+          Logga ut
+        </button>
+          </>
+        )
+        }
 
        <NavLinks to="/cart" >
           <i className="fa fa-shopping-cart"></i>
@@ -47,6 +71,7 @@ const Header = () => {
       </nav>
 
     </section>
+    </>
   )
 }
 

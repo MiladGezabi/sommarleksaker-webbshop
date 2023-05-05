@@ -3,6 +3,7 @@ import HomePage from './components/Routs/Homepage.jsx'
 import ProductsPage from './components/Routs/ProductsPage.jsx'
 import AdminPage from './components/Routs/AdminPage.jsx'
 import AdminUsers from './components/Routs/AdminUsers.jsx'
+import AdminProducts from './components/Routs/AdminProducts.jsx'
 import CartPage from './components/Routs/CartPage.jsx'
 import ErrorPage from './components/Routs/ErrorPage.jsx'
 import { createHashRouter } from 'react-router-dom'
@@ -29,6 +30,10 @@ export const router = createHashRouter([
           {
             path: "users",
             element: <AdminUsers />
+          },
+          {
+            path: "products",
+            element: <AdminProducts />
           }
         ]
       },
