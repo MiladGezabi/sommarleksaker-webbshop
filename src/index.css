@@ -141,11 +141,12 @@ nav {
   background-color: #FFBD00;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
   min-height: 80vh;
   border: 2px solid black;
   margin: 4rem 6rem;
+  padding-top: 9rem;
 }
 
 .login-form h2 {
@@ -157,8 +158,6 @@ nav {
 .login-form form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .login-form form input {
@@ -166,11 +165,7 @@ nav {
   border-radius: 0.2rem;
   font-family: 'Glory', sans-serif;
   padding: 0.3rem;
-}
-
-.validlogin {
-  font-size: 1rem;
-  color: rgb(252, 61, 61);
+  margin: 1rem;
 }
 
 .login-form form button {
@@ -182,11 +177,7 @@ nav {
   font-family: 'Glory', sans-serif;
   font-weight: 600;
   cursor: pointer;
-}
-
-.login-form form * {
-  margin-top: 4rem;
-
+  margin: 1rem;
 }
 
 /* Här slutar kod för login form */
@@ -209,7 +200,8 @@ nav {
   text-align: center;
   min-height: 80vh;
   border: 2px solid black;
-  margin: 4rem 6rem;
+  border-right: none; border-left: none;
+  margin-top: 1rem;
 }
 
 .heading-box {
@@ -333,6 +325,22 @@ nav {
   font-size: 1.5rem;
   margin: 0.5rem 0;
   text-align: center;
+}
+
+.userlist {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.3rem;
+}
+
+.userlist button {
+  padding: 0.2rem;
+  border: none;
+  background-color: #FF5400;
+  color: white;
+  border-radius: 0.2rem;
+  cursor: pointer;
 }
 
 /* Här slutar kod för lägg till admin sidan */

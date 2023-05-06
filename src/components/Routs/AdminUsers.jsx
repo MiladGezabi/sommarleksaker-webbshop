@@ -56,9 +56,12 @@ const AdminUsers = () => {
                 <ul>
                 {
                     userList.map((info)=>
-                    <li key={info.name}>
+                    <li className="userlist" key={info.name}>
                         <p>
-                            {info.name}  {info.password}
+                            {info.name}  
+                        </p>
+                        <p>
+                            {info.password}
                         </p>
                         <button className="delete-user" onClick={()=>handleDelete(info.name)}>Ta bort</button>
                     </li>)

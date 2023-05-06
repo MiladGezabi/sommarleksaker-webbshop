@@ -4,7 +4,7 @@ export const validation = (name, password) => {
   let errors = {}
 
   if(!name) {
-    errors.name = "användarnamn krävs"
+    errors.name = "Användarnamn krävs"
   }
   else if (name.length < 5) {
     errors.name = "Måste innehålla minst 5 tecken"
