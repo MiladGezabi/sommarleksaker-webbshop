@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil"
-import { loginState, UsersList } from "./Atoms"
+import { loginState, UsersList, CurrentAdmin } from "./Atoms"
 import { useState } from "react"
 
 export const LogInForm = () => {
@@ -7,13 +7,18 @@ export const LogInForm = () => {
     const [name, setName] = useState("")
     const [password, setPassword] = useState("")
     const [userList, setUserList] = useRecoilState(UsersList)
+    const [currentAdmin, setCurrentAdmin] = useRecoilState(CurrentAdmin)
 
     const handleLogin = (e) => {
         e.preventDefault()
-        if(name === userList.name && password === userList.password){
-            setIsLoggedIn(true)
+        const userLogin = userList.filter((el,k)=>{
+            return el.name === name && el.password === password
+        })
+        if(userLogin.length === 0){
+            console.log("fel användarnamn eller lösenord");
         } else {
-            console.log("fel har inträffat")
+            setIsLoggedIn(true)
+            setCurrentAdmin(name)
         }
     }
   return (
@@ -25,8 +30,10 @@ export const LogInForm = () => {
             <form onSubmit={handleLogin}>
                 
                 <input placeholder="Användarnamn" type="text" value={name} onChange={(e) =>setName(e.target.value)}/>
+                
 
-                <input placeholder="Lösenord" type="text" value={password} onChange={(e) =>setPassword(e.target.value)}/>
+                <input placeholder="Lösenord" type="password" value={password} onChange={(e) =>setPassword(e.target.value)}/>
+                
 
                 <button>
                     Logga in

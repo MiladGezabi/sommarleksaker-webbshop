@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil"
-import { loginState } from "../Atoms"
+import { loginState, CurrentAdmin } from "../Atoms"
 import styled from "styled-components"
 import { Link, Outlet } from "react-router-dom"
 import { LogInForm } from "../Adminlogin"
@@ -23,6 +23,7 @@ const AdminProductsPageBtn = styled(Link)`
 
 const AdminPage = () => {
     const [IsloggedIn, setIsLoggedIn] = useRecoilState(loginState)
+    const [currentAdmin, setCurrentAdmin] = useRecoilState(CurrentAdmin)
 
     
 
@@ -34,7 +35,7 @@ const AdminPage = () => {
 
         {IsloggedIn === true && (
         <section className="admin-page">
-            <h2>Välkommen Admin</h2>
+            <h2>Välkommen {currentAdmin}</h2>
         <   div className="heading-box">
                 <AdminUsersPageBtn to="/admin/users">
                 Lägg till fler Admins

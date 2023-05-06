@@ -47,6 +47,7 @@ nav {
   font-family: 'Glory', sans-serif;
   font-size: 1.5rem;
   background-color: transparent;
+  text-decoration: none;
   border: none;
   color: black;
   Margin: 0rem 1rem;
@@ -165,6 +166,11 @@ nav {
   border-radius: 0.2rem;
   font-family: 'Glory', sans-serif;
   padding: 0.3rem;
+}
+
+.validlogin {
+  font-size: 1rem;
+  color: rgb(252, 61, 61);
 }
 
 .login-form form button {
@@ -356,3 +362,13 @@ nav {
 }
 
 /* -- Här slutar style kod för Footer component */
+
+
+/* validation */
+
+.errormessage {
+  font-size: 1.2rem;
+  margin: 0.2rem;
+  color: rgb(255, 63, 63);
+  font-family: 'Glory', sans-serif;
+}

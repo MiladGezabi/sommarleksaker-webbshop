@@ -1,17 +1,25 @@
 import { useRecoilState } from "recoil"
 import { NameState, PasswordState, UsersList } from "../Atoms"
 import { createGlobalStyle } from "styled-components"
+import { validation } from "../../utils/validation"
+import { useState } from "react"
+
 
 const AdminUsers = () => {
     const [name, setName] = useRecoilState(NameState)
     const [password, setPassword] = useRecoilState(PasswordState)
     const [userList, setUserList] = useRecoilState(UsersList)
+    const [errors, setErrors] = useState({})
 
-    // console.log(userList)
+    
+
+    
+
+    
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(name, password)
+        setErrors(validation(name, password))
         const loginInfo = {name, password}
         if(name&&password){
             setUserList((list)=>[...list,loginInfo])
@@ -31,8 +39,11 @@ const AdminUsers = () => {
             </h2>
 
             <form onSubmit={handleSubmit}>
-                <input placeholder="Användarnamn" type="text"  value={name} onChange={(e) =>setName(e.target.value)}/>
-                <input placeholder="Lösenord" type="text" value={password} onChange={(e) =>setPassword(e.target.value)}/>
+                <input
+                placeholder="Användarnamn" type="text"  value={name} onChange={(e) =>setName(e.target.value)}/>
+                {errors.name && <p className="errormessage">{errors.name}</p>}
+                <input placeholder="Lösenord" type="password" value={password} onChange={(e) =>setPassword(e.target.value)}/>
+                {errors.password && <p className="errormessage">{errors.password}</p>}
                 <button>
                     Lägg till
                 </button>

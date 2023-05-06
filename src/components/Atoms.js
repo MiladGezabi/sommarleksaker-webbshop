@@ -23,3 +23,8 @@ export const UsersList = atom({
     password: "password"
   }]
 })
+
+export const CurrentAdmin = atom({
+  key: "currentadmin",
+  default:""
+})

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import styled from "styled-components"
 import { useRecoilState } from "recoil"
 import { loginState } from "./Atoms"
@@ -57,10 +57,11 @@ const Header = () => {
         <NavLinks to="/admin" >
         Admin
         </NavLinks>
-
-        <button className="logout-btn" onClick={() => handleLogout()}>
+        
+        <NavLink to="/admin" className="logout-btn" onClick={() => handleLogout()}>
           Logga ut
-        </button>
+        </NavLink>
+
           </>
         )
         }
