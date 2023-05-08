@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import styled from "styled-components"
+import addAllTheProducts from "../../utils/addProducts"
 
 const StyledLinkBtn = styled(Link)`
  text-decoration: none;
@@ -13,6 +14,10 @@ const StyledLinkBtn = styled(Link)`
 `
 
 const HomePage = () => {
+
+
+  addAllTheProducts()
+  console.log(() =>addAllTheProducts())
 
   return (
     <section className="homepage">
