@@ -29,7 +29,32 @@ export const CurrentAdmin = atom({
   default:""
 })
 
+export const ProductName = atom({
+  key: "productname",
+  default: ""
+})
+
+export const Price = atom({
+  key: "Price",
+  default: ""
+})
+
+export const Picture = atom({
+  key: "Picture",
+  default: ""
+})
+
+export const Description = atom({
+  key: "Description",
+  default: ""
+})
+
 export const Products = atom({
+  key: "prouducts",
+  default: []
+})
+
+export const Prod = atom({
   key: "addproducts",
   default: [
     {

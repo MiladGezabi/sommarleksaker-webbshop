@@ -14,10 +14,8 @@ const StyledLinkBtn = styled(Link)`
 `
 
 const HomePage = () => {
-
-
-  addAllTheProducts()
-  console.log(() =>addAllTheProducts())
+  
+  
 
   return (
     <section className="homepage">

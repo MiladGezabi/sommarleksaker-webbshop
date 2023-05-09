@@ -1,6 +1,23 @@
+import { useEffect } from "react"
+import getProducts from "../../utils/getProducts"
+import { useRecoilState } from "recoil"
+import { Products, loginState } from "../Atoms"
 
 
 const ProductsPage = () => {
+    const [products, setProducts] = useRecoilState(Products)
+    const [isLoggedIn, setIsLoggedIn] = useRecoilState(loginState)
+
+    useEffect(() => {
+        let mounted = true
+        getProducts()
+            .then(product => {
+                if(mounted) {
+                    setProducts(product)
+                }
+            })
+            return () => mounted = false;
+    }, [])
 
     return (
         <>
@@ -21,6 +38,28 @@ const ProductsPage = () => {
         </section>
 
         <section className="products-card-box">
+            <ul>
+                {products.map(product =>
+                    <li key={product.id}>
+                        <div>
+                            {product.picture}
+                        </div>
+                        <h3>
+                            {product.name}
+                        </h3>
+                        <p>
+                            {product.price}
+                        </p>
+                        <button>
+                            Köp
+                        </button>
+                        {isLoggedIn === true &&
+                        (<button>
+                            Ta bort
+                        </button>)
+                         }
+                    </li>)}
+            </ul>
 
         </section>
         </>
