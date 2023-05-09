@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
 import styled from "styled-components"
-import addAllTheProducts from "../../utils/addProducts"
 
 const StyledLinkBtn = styled(Link)`
  text-decoration: none;

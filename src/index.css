@@ -20,6 +20,10 @@ main {
   min-height: 100vh;
 }
 
+.navlink {
+  text-decoration: none;
+}
+
 
 /*-- Här börjar style kod för Header componenten --*/
 
@@ -130,7 +134,71 @@ nav {
   border: none;
   background: none;
   cursor: pointer;
+}
 
+.products-card-box {
+  margin: 1.5rem 1rem;
+}
+
+.products-card-box ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #FFBD00;
+  padding: 2rem 0;
+  list-style: none;
+  border: 1px solid black;
+  border-radius: .2rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  text-align: center;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.image-box {
+  min-height: 15rem;
+}
+
+.product-card div img {
+  max-width: 100%;
+}
+
+.name-and-price-box {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  margin: 0.8rem 0;
+}
+
+.name-and-price-box h3, .name-and-price-box p {
+  font-size: 1.5rem;
+  font-family: 'Glory', sans-serif;
+  color: black;
+}
+
+.product-card button {
+  font-size: 1.5rem;
+  font-family: 'Glory', sans-serif;
+  padding: 0.2rem 0;
+  border: none;
+  background-color: #FF5400;
+  color: white;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  margin: 0.2rem 1rem;
+}
+
+.product-card button:hover {
+  transform: scale(1.03);
 }
 
 /* Här slutar koden för ProductsPage */
