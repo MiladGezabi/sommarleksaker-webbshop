@@ -58,6 +58,18 @@ nav {
   cursor: pointer;
 }
 
+.cart-counter {
+  padding: 0 3px;
+  font-weight: bold;
+  border-radius: 5px;
+  position: relative;
+  top: -15px;
+  font-family: unset;
+  font-variant: normal;
+  color: white;
+  background-color: red;
+}
+
 /*-- Här slutar style kod för Header component --*/
 
 /* Här börjar koden för HomePage */

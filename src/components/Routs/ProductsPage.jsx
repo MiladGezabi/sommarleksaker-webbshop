@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react"
 import getProducts from "../../utils/getProducts"
 import { useRecoilState } from "recoil"
-import { Products, loginState } from "../Atoms"
+import { Products, loginState, Cart } from "../Atoms"
 import { NavLink } from "react-router-dom"
 
 
@@ -63,7 +63,9 @@ const ProductsPage = () => {
                         </p>
                         </div>
                         </NavLink>
-                        <button className="buybtn">
+                        <button
+                        onClick={() => handleCart(product)}
+                         className="buybtn">
                             Köp
                         </button>
                         {isLoggedIn === true &&

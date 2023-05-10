@@ -67,7 +67,9 @@ const Header = () => {
         }
 
        <NavLinks to="/cart" >
+        <span>
           <i className="fa fa-shopping-cart"></i>
+        </span>
        </NavLinks>
       </nav>
 
