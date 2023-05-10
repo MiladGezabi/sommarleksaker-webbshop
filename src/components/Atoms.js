@@ -53,3 +53,8 @@ export const Products = atom({
   key: "prouducts",
   default: []
 })
+
+export const CartItems = atom({
+  key: "cartitems",
+  default: []
+})

@@ -150,6 +150,7 @@ nav {
 
 .products-card-box {
   margin: 1.5rem 1rem;
+  position: relative;
 }
 
 .products-card-box ul {
@@ -211,6 +212,18 @@ nav {
 
 .product-card button:hover {
   transform: scale(1.03);
+}
+
+.exist-msg {
+  position: fixed;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  z-index: 2;
+  top: 1rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: rgb(250, 141, 141);
+  font-size: 1.5rem;
 }
 
 /* Här slutar koden för ProductsPage */
@@ -424,6 +437,86 @@ nav {
 }
 
 /* Här slutar kod för lägg till admin sidan */
+
+/* Här börjar koden för cartpage */
+
+.cart-items {
+  margin: 3rem auto;
+  width: 50%;
+  background-color: #FFBD00;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+}
+
+.cart-items-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 2rem;
+  border-bottom: 2px solid black;
+}
+
+.cart-items-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 2rem 0;
+}
+
+.cart-items-image {
+  width: 10rem;
+  height: auto;
+  border: 2px solid black;
+  margin-right: 1rem;
+}
+
+.cart-items-list {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-left: 5%;
+}
+
+.cart-items-name,
+.cart-items-funtion {
+  width: 25%;
+}
+
+.cart-items-add,
+.cart-items-remove {
+  width: 3rem;
+  margin-right: 1.5rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 1.4rem;
+  color: white;
+  cursor: pointer;
+  background-color: #FF5400;
+}
+
+.cart-items-total-price-name {
+  display: flex;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 22%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-top: 2px solid black;
+}
+
+.cart-items-total-price {
+  display: flex;
+  padding-left: 45%;
+}
+
+/* Här slutar koden för cartpage */
 
 /* -- Här börjar koden för Footer component */
 
