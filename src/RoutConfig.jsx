@@ -1,6 +1,7 @@
 import Root from './components/Routs/Root.jsx'
 import HomePage from './components/Routs/Homepage.jsx'
 import ProductsPage from './components/Routs/ProductsPage.jsx'
+import ProductPage from './components/Routs/ProductPage.jsx'
 import AdminPage from './components/Routs/AdminPage.jsx'
 import AdminUsers from './components/Routs/AdminUsers.jsx'
 import AdminProducts from './components/Routs/AdminProducts.jsx'
@@ -21,6 +22,10 @@ export const router = createHashRouter([
       {
         path: "products",
         element: <ProductsPage />
+      },
+      {
+        path: "product/:id",
+        element: <ProductPage />
       },
       {
         path: "admin",

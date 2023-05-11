@@ -1,5 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
-import getProducts from "../../utils/getProducts";
+import { useMemo, useState } from "react";
 import { useRecoilState } from "recoil";
 import { CartItems, Products, loginState } from "../Atoms";
 import { NavLink } from "react-router-dom";
@@ -12,21 +11,16 @@ const ProductsPage = () => {
   const [cartItems, setCartItems] = useRecoilState(CartItems)
   
 
-  useEffect(() => {
-    let mounted = true;
-    getProducts().then((product) => {
-      if (mounted) {
-        setProducts(product);
-      }
-    });
-    return () => (mounted = false);
-  }, []);
+  
 
   const filteredProducts = useMemo(() => {
     return products.filter((product) => {
       return product.name.toLowerCase().includes(query.toLowerCase());
     });
   }, [products, query]);
+
+  const handleDelete = (productId) => {
+    setProducts(products.filter((product) => product.id !== productId))}
 
   
 
@@ -55,7 +49,8 @@ const ProductsPage = () => {
           {products &&
             filteredProducts.map((product) => (
               <li key={product.id} className="product-card">
-                <NavLink className="navlink">
+                <NavLink to={`/product/${product.id}`}
+                 className="navlink">
                   <div className="image-box">
                     <img src={product.picture} alt={product.name} />
                   </div>
@@ -70,7 +65,8 @@ const ProductsPage = () => {
                 >
                   Köp
                 </button>
-                {isLoggedIn === true && <button>Ta bort</button>}
+                {isLoggedIn === true && <button className="deletebtn"
+                onClick={() => handleDelete(product.id)}>Ta bort</button>}
               </li>
             ))}
         </ul>

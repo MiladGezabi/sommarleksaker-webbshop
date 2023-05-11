@@ -1,5 +1,5 @@
 
-
+// funktion för att lägga till produkt till varukorgen
 export const handleAddProduct = (product, cartItems, setCartItems) => {
   const productExist = cartItems.find((item) => item.id === product.id)
   if(productExist){
@@ -9,6 +9,7 @@ export const handleAddProduct = (product, cartItems, setCartItems) => {
   }
 }
 
+// funktion för att ta bort saker från varukorgen
 export const handleRemoveProduct = (product, cartItems, setCartItems) => {
   const productExist = cartItems.find((item) => item.id === product.id)
   if(productExist.quantity === 1){
@@ -20,4 +21,10 @@ export const handleRemoveProduct = (product, cartItems, setCartItems) => {
       : item
     })
   }
+}
+
+
+// funktion för att ta bort produkt som admin.
+export const handleDelete = (products, productId) => {
+  setProducts(products.filter((product) => product.id !== productId))
 }
