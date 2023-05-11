@@ -13,17 +13,34 @@ export const LogInForm = () => {
 
     const handleLogin = (e) => {
         e.preventDefault()
-        setErrors(validation(name, password))
-        const userLogin = userList.filter((el,k)=>{
-            return el.name === name && el.password === password
-        })
-        if(userLogin.length === 0){
-            console.log("fel användarnamn eller lösenord");
-        } else {
-            setIsLoggedIn(true)
-            setCurrentAdmin(name)
+        const loginErrors = validateLogin(name, password)
+        setErrors(loginErrors)
+        if (Object.keys(loginErrors).length === 0) {
+            const userLogin = userList.filter((el,k)=>{
+                return el.name === name && el.password === password
+            })
+            if (userLogin.length === 0) {
+                setErrors({
+                    general: "Fel användarnamn eller lösenord."
+                })
+            } else {
+                setIsLoggedIn(true)
+                setCurrentAdmin(name)
+            }
         }
     }
+
+    const validateLogin = (name, password) => {
+        let errors = {}
+        if (!name.trim()) {
+            errors.name = "Användarnamn är obligatoriskt."
+        }
+        if (!password.trim()) {
+            errors.password = "Lösenord är obligatoriskt."
+        }
+        return errors
+    }
+
   return (
     <section className="login-form">
             <h2>
@@ -33,11 +50,13 @@ export const LogInForm = () => {
             <form onSubmit={handleLogin}>
                 
                 <input placeholder="Användarnamn" type="text" value={name} onChange={(e) =>setName(e.target.value)}/>
-                {errors.name && <p className="errormessage">{errors.name}</p>}
+                {errors.name && <div className="errormessage">{errors.name}</div>}
+                
                 
 
                 <input placeholder="Lösenord" type="password" value={password} onChange={(e) =>setPassword(e.target.value)}/>
-                {errors.password && <p className="errormessage">{errors.password}</p>}
+                {errors.password && <div className="errormessage">{errors.password}</div>}
+                {errors.general && <div className="errormessage">{errors.general}</div>}
                 
 
                 <button>
