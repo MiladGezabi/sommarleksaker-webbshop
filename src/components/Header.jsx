@@ -1,7 +1,10 @@
 import { Link, NavLink } from "react-router-dom"
+import { useRef } from "react"
 import styled from "styled-components"
 import { useRecoilState } from "recoil"
 import { loginState } from "./Atoms"
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 const LogoLink = styled(Link)`
  text-decoration: none;
@@ -31,6 +34,17 @@ const Header = () => {
     setIsLoggedIn(false)
   }
 
+  const navRef = useRef()
+
+  const showNavBar = () => {
+    navRef.current.classList.toggle("responsive-nav")
+  }
+
+  const handleFinalLogout = () => {
+    handleLogout()
+    showNavBar()
+  }
+
   return (
     <>
     <section className="header">
@@ -41,7 +55,7 @@ const Header = () => {
         </LogoLink>
       </h1>
 
-      <nav>
+      <nav className="default-nav">
         {IsloggedIn === false ? (
           <>
         <ProductsLink to="/products" >
@@ -73,6 +87,59 @@ const Header = () => {
         </span>
        </NavLinks>
       </nav>
+
+      <nav className="hamburger-nav" ref={navRef}>
+      {IsloggedIn === false ? (
+          <>
+          <div>
+        <ProductsLink onClick={showNavBar} to="/products" >
+        Produkter
+        </ProductsLink>
+
+          </div>
+        <div>
+
+       <NavLinks onClick={showNavBar} to="/admin" >
+       Logga in
+       </NavLinks>
+        </div>
+          </>
+        ):
+        (
+          <>
+          <div>
+        <NavLinks onClick={showNavBar} to="/admin" >
+        Admin
+        </NavLinks>
+          </div>
+        <div>
+        <NavLink to="/admin" className="logout-btn" onClick={() => handleFinalLogout()}>
+          Logga ut
+        </NavLink>
+        </div>
+
+          </>
+        )
+        }
+      <div>
+       <NavLinks to="/cart"
+       onClick={showNavBar} >
+        Varukorg
+       </NavLinks>
+      </div>
+       <button
+       className="nav-btn nav-close-btn"
+       onClick={showNavBar}
+       >
+        <CloseIcon />
+       </button>
+      </nav>
+      <button 
+      className="nav-btn"
+      onClick={showNavBar}
+      >
+        <MenuIcon />
+      </button>
 
     </section>
     </>

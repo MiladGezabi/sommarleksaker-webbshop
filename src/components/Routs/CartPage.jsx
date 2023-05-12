@@ -15,7 +15,7 @@ const CartPage = () => {
             <h3 className="cart-items-header">Varukorg</h3>
             
             {cartItems.length === 0 && <h3 className="cart-items-empty">Din varukorg är tom</h3>}
-            <div>
+            <div className="cart-items-list-container">
                 {cartItems.map((item) =>{
                     return (
                     <div key={item.id} className="cart-items-list">

@@ -37,11 +37,7 @@ const ProductsPage = () => {
           />
         </form>
 
-        <div className="sorting-box">
-          <button>
-            Sortera <i className="fa fa-sort"></i>
-          </button>
-        </div>
+      
       </section>
 
       <section className="products-card-box">

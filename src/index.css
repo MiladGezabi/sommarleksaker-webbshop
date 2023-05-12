@@ -70,6 +70,20 @@ nav {
   background-color: red;
 }
 
+.nav-btn {
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  display: none;
+}
+
+.hamburger-nav {
+  display: none;
+}
+
 /*-- Här slutar style kod för Header component --*/
 
 /* Här börjar koden för HomePage */
@@ -170,6 +184,8 @@ nav {
   border-radius: .2rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   text-align: center;
+  max-width: 20rem;
+  margin: 0 auto;
 }
 
 .product-card:hover {
@@ -507,7 +523,7 @@ nav {
 
 .cart-items {
   margin: 3rem auto;
-  width: 50%;
+  width: 80%;
   background-color: #FFBD00;
   border: 2px solid black;
   border-radius: 0.5rem;
@@ -518,6 +534,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   height: 2rem;
+  font-size: 1.5rem;
   border-bottom: 2px solid black;
 }
 
@@ -621,6 +638,28 @@ nav {
 
 /* Här börjar koden för mediaqueries */
 
+@media screen and (max-width: 780px) {
+  .cart-items {
+    width: 100%;
+  }
+
+  .cart-items-list {
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .cart-items-list-container {
+    margin: 0 auto;
+  }
+
+  .cart-items-total-price-name {
+    padding: 2rem 0;
+  }
+}
+
 @media screen and (max-width: 571px) {
   .product-page {
     width: 100%;
@@ -632,5 +671,64 @@ nav {
 
   .img-container, .img-container img {
     width: 100%;
+  }
+
+  .nav-btn {
+    display: block;
+  }
+
+
+  .hamburger-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    background-color: #FFBD00;
+    transition: 1s;
+    transform: translateY(-100vh);
+    display: flex;
+    z-index: 3;
+  }
+
+  .hamburger-nav div {
+    display: flex;
+    justify-content: center;
+  }
+
+  .responsive-nav {
+    transform: none;
+  }
+
+  .default-nav {
+    display: none;
+  }
+
+  .homepage {
+    height: unset;
+    background-size: 100% auto;
+    background-color: #FFF8D6;
+  }
+
+  .homepage h2 {
+    font-size: 3.5rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .cart-items-list {
+    margin: 0 auto;
+    
+  }
+
+  .cart-items-image {
+    width: 11rem;
   }
 }
