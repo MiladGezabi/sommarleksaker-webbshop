@@ -562,7 +562,7 @@ nav {
   padding-bottom: 2rem;
   font-size: 1.3rem;
   font-weight: 600;
-  margin-left: 5%;
+  justify-content: center;
 }
 
 .cart-items-name,
