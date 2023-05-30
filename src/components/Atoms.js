@@ -58,3 +58,8 @@ export const CartItems = atom({
   key: "cartitems",
   default: []
 })
+
+export const GetProductActivator = atom({
+  key: "getProductsActivator",
+  default: false
+})

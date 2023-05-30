@@ -3,12 +3,14 @@ import { useRecoilState } from "recoil";
 import { CartItems, Products, loginState } from "../Atoms";
 import { NavLink } from "react-router-dom";
 import { handleAddProduct } from "../../utils/handleProduct";
+import onDeleteProduct from "../../utils/deleteProduct";
 
 const ProductsPage = () => {
   const [products, setProducts] = useRecoilState(Products);
   const [isLoggedIn, setIsLoggedIn] = useRecoilState(loginState);
   const [query, setQuery] = useState("");
   const [cartItems, setCartItems] = useRecoilState(CartItems)
+  
   
 
   
@@ -19,8 +21,8 @@ const ProductsPage = () => {
     });
   }, [products, query]);
 
-  const handleDelete = (productId) => {
-    setProducts(products.filter((product) => product.id !== productId))}
+  
+  
 
   
 
@@ -42,7 +44,7 @@ const ProductsPage = () => {
 
       <section className="products-card-box">
         <ul>
-          {products &&
+          {products ?
             filteredProducts.map((product) => (
               <li key={product.id} className="product-card">
                 <NavLink to={`/product/${product.id}`}
@@ -62,9 +64,9 @@ const ProductsPage = () => {
                   Köp
                 </button>
                 {isLoggedIn === true && <button className="deletebtn"
-                onClick={() => handleDelete(product.id)}>Ta bort</button>}
+                onClick={() =>onDeleteProduct(product)}>Ta bort</button>}
               </li>
-            ))}
+            )): <h2>Laddar producter.......</h2>}
         </ul>
       </section>
     </>

@@ -9,6 +9,7 @@ import getProducts from "../../utils/getProducts"
 
 const Root = () => {
   const [products, setProducts] = useRecoilState(Products)
+  
 
   useEffect(() => {
     let mounted = true;
@@ -19,6 +20,7 @@ const Root = () => {
     });
     return () => (mounted = false);
   }, []);
+ 
   
 
   return (
