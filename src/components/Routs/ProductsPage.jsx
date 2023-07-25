@@ -35,6 +35,7 @@ const ProductsPage = () => {
           <input
             type="search"
             value={query}
+            placeholder="Sök"
             onChange={(e) => setQuery(e.target.value)}
           />
         </form>
